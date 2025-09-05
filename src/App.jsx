@@ -54,79 +54,95 @@ const App = () => {
 
   return (
     <>
-      <div className="container-fluid video-container shadow">
-        {/* desktop mood */}
-        <div className="d-md-flex justify-content-between align-items-center d-none">
-          <ul className="list-unstyled d-flex jusitfy-content-between align-items-center gap-5 fw-bold fs-3">
-            <li>Home</li>
-            <li>Services</li>
-            <li>Contact</li>
-            <li>About</li>
-          </ul>
-          <img src="logos.png" width={200} alt="" className="img-fluid" />
-        </div>
-
-        {/*  */}
-        {/* This button will only show on small screens */}
-        <div className="row py-2 d-md-none">
-          <div className="col-12 d-flex justify-content-between fixed-top mt-3  align-items-center">
-            <h1 className="display-4" data-aos="fade-left">
-              GEM CAR WASH
-            </h1>
-            <Button
-              className="d-md-none bg-white border-0"
-              onClick={handleShow}
-            >
-              <img
-                src="hamburger.png"
-                width={30}
-                alt=""
-                className="img-fluid"
-              />
-            </Button>
-
-            <Offcanvas
-              show={show}
-              onHide={handleClose}
-              placement="start" // left side
-              className="d-md-none
-          " // hide on md and above
-            >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title>Menu</Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-                <ul>
-                  <li>home</li>
-                  <li>home</li>
-                  <li>home</li>
-                  <li>home</li>
-                </ul>
-              </Offcanvas.Body>
-            </Offcanvas>
-          </div>
-
-          <div className="col-12 mt-5 py-3">
+      <div className="body">
+        <div className="container-fluid video-container ">
+          {/* desktop mood */}
+          <div className="d-md-flex justify-content-between align-items-center d-none ">
             <img
-              src="logos.png"
+              src="logos-removebg-preview.png"
+              width={200}
               alt=""
-              data-aos="zoom-in"
-              className="img-fluid mt-5"
+              className="img-fluid"
             />
+            <ul className="list-unstyled d-flex jusitfy-content-between nav-list align-items-center gap-5 fw-bold ">
+              <li>Home</li>
+              <li>Services</li>
+              <li>Contact</li>
+              <li>About</li>
+            </ul>
+            <button className="contact-btn rounded ">Contact</button>
+          </div>
+
+          {/*  */}
+          {/* This button will only show on small screens */}
+          <div className="row py-2 d-md-none ">
+            <div className="col-12 d-flex justify-content-between fixed-top mt-3  align-items-center">
+              <h1 className="display-4" data-aos="fade-left">
+                GEM CAR WASH
+              </h1>
+              <Button
+                className="d-md-none bg-white border-0"
+                onClick={handleShow}
+              >
+                <img
+                  src="hamburger.png"
+                  width={30}
+                  alt=""
+                  className="img-fluid"
+                />
+              </Button>
+
+              <Offcanvas
+                show={show}
+                onHide={handleClose}
+                placement="start" // left side
+                className="d-md-none
+          " // hide on md and above
+              >
+                <Offcanvas.Header closeButton>
+                  <Offcanvas.Title>Menu</Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                  <ul>
+                    <li>home</li>
+                    <li>home</li>
+                    <li>home</li>
+                    <li>home</li>
+                  </ul>
+                </Offcanvas.Body>
+              </Offcanvas>
+            </div>
+
+            <div className="col-12 mt-5 py-3">
+              <img
+                src="logos-removebg-preview.png"
+                alt=""
+                data-aos="zoom-in"
+                className="img-fluid mt-5"
+              />
+            </div>
           </div>
         </div>
-      </div>
-      <div className="container-fluid ">
-        <div className="row">
-          <div className="col-6">
-            <img src="car1.png" alt="" className="img-fluid" />
-          </div>
-          <div className="col-6 d-flex justify-content-center align-items-center">
-            <button className="btn btn-success">Car Wash Details</button>
-          </div>
-          <div className="col-6"></div>
-          <div className="col-6">
-            <img src="bike.jpg" alt="" className="img-fluid" width={400} />
+
+        <div className="container-fluid car-background ">
+          <div className="row d-flex justify-content-md-center align-items-center ">
+            <div className="col-md-6 col-12 text-white">
+              <h1>Premium Car & Bike Wash</h1>
+              <p>
+                Experience the shine your ride deserves – trusted care for every
+                detail. Our professional team uses advanced techniques and
+                high-quality products to give your car and bike a spotless
+                finish.
+              </p>
+              <p>
+                From exterior hand wash to interior detailing, we ensure every
+                corner of your vehicle looks brand new. Drive with confidence,
+                style, and pride.
+              </p>
+              <a href="#contact" class="btn">
+                Book Now
+              </a>
+            </div>
           </div>
         </div>
       </div>
