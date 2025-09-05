@@ -1,0 +1,17 @@
+/* .video-container{
+  height: 100vh;
+  width: 100vw;
+  background: url('../public/wash.mp4');
+} */
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+/* .background-image{
+    background: url("../public/bg-car.jpg") no-repeat ;
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    height: 500px; */
+    /* background: #000;
+}   */
