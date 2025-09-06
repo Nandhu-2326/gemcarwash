@@ -1,12 +1,8 @@
-/* .video-container{
-  height: 100vh;
-  width: 100vw;
-  background: url('../public/wash.mp4');
-} */
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 .body{
   background-color: #ffffff;
@@ -31,9 +27,10 @@
   }
   .car-background {
     background: url("../public/side-car.jpg") no-repeat center center;
-    background-size: cover;   /* Scales nicely */
-    height: 100vh;            /* Full viewport height */
-    width: 100%;              /* Full width */
+    background-size: cover;  
+    width: 100%;    
+    overflow: hidden;
+              /* Full width */
   }
   
   .wash-section {
@@ -73,3 +70,24 @@
     background: rgb(55, 143, 194);
     
   }
+
+  /*  About Us*/
+  .about-us{
+    background: #000;
+    border-radius: 0px 40% 40% 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+  .about-h1 {
+    position: relative;
+    display: inline-block; }
+  
+  .about-h1::after {
+    content: '';
+    display: block;        /* allows width & height to work */
+    width: 100%;           /* underline spans full width of text */
+    height: 4px;           /* adjust thickness */
+    background: rgb(55, 143, 194);
+    margin-top: 6px;       /* space between text and line */
+    border-radius:10px;    /* optional: rounded line */
+  }
+  

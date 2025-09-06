@@ -124,26 +124,25 @@ const App = () => {
           </div>
         </div>
 
-        <div
-          className="container-fluid car-background "
-          style={{ overflow: "hidden" }}
-        >
-          <div className="row d-flex  align-items-center ">
+        <div className="container-fluid car-background">
+          <div className="row d-flex  align-items-center py-3">
             <div className="col-md-6 mt-4 col-12 text-white">
-              <h1 className="title">Premium Car & Bike Wash</h1>
-              <p className="desc">
+              <h1 className="title" data-aos="zoom-out">
+                Premium Car & Bike Wash
+              </h1>
+              <p className="desc" data-aos="zoom-in">
                 Experience the shine your ride deserves – trusted care for every
                 detail. Our professional team uses advanced techniques and
                 high-quality products to give your car and bike a spotless
                 finish that lasts.
               </p>
-              <p className="desc">
+              <p className="desc" data-aos="zoom-out">
                 From exterior hand wash to deep interior detailing, we ensure
                 every corner of your vehicle feels brand new. With eco-friendly
                 cleaning solutions, soft-touch technology, and expert finishing,
                 your ride gets the treatment it truly deserves.
               </p>
-              <p className="desc">
+              <p className="desc" data-aos="zoom-in">
                 Drive with confidence, style, and pride – because your car or
                 bike is more than just a vehicle, it’s your lifestyle.
               </p>
@@ -154,24 +153,28 @@ const App = () => {
           </div>
         </div>
 
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col-12 col-md-6 d-flex justify-content-around align-items-center">
-              <img width={300} src="car1.png" alt="" className="img-fluid" />
-              <div className="d-flex align-items-center flex-column">
-                <h1>Car Details</h1>
-              </div>
-            </div>
-            <div className="col-12 col-md-6 d-flex justify-content-around align-items-center">
+        <div className="container-fluid mt-3 " style={{ overflow: "hidden" }}>
+          <div className="row flex-row-reverse">
+            <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
               <img
-                width={200}
-                src="bike-removebg-preview.png"
+                src="car-blue.png"
                 alt=""
                 className="img-fluid"
+                data-aos="fade-left"
               />
+            </div>
+            <div
+              data-aos="fade-right"
+              className="col-12 about-us py-4 col-md-6 d-flex justify-content-center align-items-center rounded-pill rounded-start"
+            >
+              <h1 className="text-white about-h1" data-aos="zoom-in">
+                About Us
+              </h1>
             </div>
           </div>
         </div>
+
+        <div className="container mt-5 py-5"></div>
       </div>
     </>
   );
