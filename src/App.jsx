@@ -42,10 +42,10 @@ const App = () => {
         {/* Overlay Content */}
         <div className="d-flex justify-content-center align-items-center ">
           <h1
-            className="text-dark fw-bold text-center display-2"
+            className="text-dark fw-bold text-center display-2 loading-title"
             data-aos="zoom-in"
           >
-            Welcome GEM Service
+            Welcome GEM Car Wash
           </h1>
         </div>
       </div>
@@ -76,7 +76,7 @@ const App = () => {
           {/*  */}
           {/* This button will only show on small screens */}
           <div className="row py-2 d-md-none ">
-            <div className="col-12 d-flex justify-content-between fixed-top mt-3  align-items-center">
+            <div className="col-12 d-flex justify-content-between fixed-top py-3 bg-white  align-items-center">
               <h1 className="display-4" data-aos="fade-left">
                 GEM CAR WASH
               </h1>
@@ -124,24 +124,51 @@ const App = () => {
           </div>
         </div>
 
-        <div className="container-fluid car-background ">
-          <div className="row d-flex justify-content-md-center align-items-center ">
-            <div className="col-md-6 col-12 text-white">
-              <h1>Premium Car & Bike Wash</h1>
-              <p>
+        <div
+          className="container-fluid car-background "
+          style={{ overflow: "hidden" }}
+        >
+          <div className="row d-flex  align-items-center ">
+            <div className="col-md-6 mt-4 col-12 text-white">
+              <h1 className="title">Premium Car & Bike Wash</h1>
+              <p className="desc">
                 Experience the shine your ride deserves – trusted care for every
                 detail. Our professional team uses advanced techniques and
                 high-quality products to give your car and bike a spotless
-                finish.
+                finish that lasts.
               </p>
-              <p>
-                From exterior hand wash to interior detailing, we ensure every
-                corner of your vehicle looks brand new. Drive with confidence,
-                style, and pride.
+              <p className="desc">
+                From exterior hand wash to deep interior detailing, we ensure
+                every corner of your vehicle feels brand new. With eco-friendly
+                cleaning solutions, soft-touch technology, and expert finishing,
+                your ride gets the treatment it truly deserves.
               </p>
-              <a href="#contact" class="btn">
-                Book Now
-              </a>
+              <p className="desc">
+                Drive with confidence, style, and pride – because your car or
+                bike is more than just a vehicle, it’s your lifestyle.
+              </p>
+              <div className="d-flex justify-content-center">
+                <button className="btn-book">Book Now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-12 col-md-6 d-flex justify-content-around align-items-center">
+              <img width={300} src="car1.png" alt="" className="img-fluid" />
+              <div className="d-flex align-items-center flex-column">
+                <h1>Car Details</h1>
+              </div>
+            </div>
+            <div className="col-12 col-md-6 d-flex justify-content-around align-items-center">
+              <img
+                width={200}
+                src="bike-removebg-preview.png"
+                alt=""
+                className="img-fluid"
+              />
             </div>
           </div>
         </div>

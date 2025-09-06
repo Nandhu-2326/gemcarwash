@@ -11,6 +11,9 @@
 .body{
   background-color: #ffffff;
   font-family: 'Poppins', sans-serif;
+}
+.loading-title{
+  font-family: 'Poppins', sans-serif;
   }
   .contact-btn{
     padding: 10px 20px;
@@ -33,3 +36,40 @@
     width: 100%;              /* Full width */
   }
   
+  .wash-section {
+    text-align: center;
+    padding: 40px 20px;
+    color: #fff;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    letter-spacing: 2px; /* Adjust spacing */
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    letter-spacing: 1px; /* Apply spacing to text */
+    margin-bottom: 15px;
+  }
+
+  .btn-book {
+   
+    padding: 12px 30px;
+    background: rgb(36, 156, 226);
+    border: none;
+    color: #fff;
+    outline: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+  }
+
+  .btn-book:hover {
+    background: rgb(55, 143, 194);
+    
+  }
