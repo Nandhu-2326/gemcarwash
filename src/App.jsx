@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./App.css";
+// import { Swiper, SwiperSlide } from "swiper/react";
 import { Button, Offcanvas } from "react-bootstrap";
+import Carousel from "./Carousel";
+
 const App = () => {
   const [isLoading, setisLoading] = useState(true);
   const [show, setShow] = useState(false);
@@ -124,6 +127,10 @@ const App = () => {
           </div>
         </div>
 
+        <div className="container-fluid mb-5 mt-2">
+          <Carousel />
+        </div>
+
         <div className="container-fluid car-background">
           <div className="row d-flex  align-items-center py-3">
             <div className="col-md-6 mt-4 col-12 text-white">
@@ -153,11 +160,11 @@ const App = () => {
           </div>
         </div>
 
-        <div className="container-fluid mt-3 " style={{ overflow: "hidden" }}>
+        <div className="container-fluid  " style={{ overflow: "hidden" }}>
           <div className="row flex-row-reverse">
             <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
               <img
-                src="car-blue.png"
+                src="blue-bg.png"
                 alt=""
                 className="img-fluid"
                 data-aos="fade-left"
@@ -165,17 +172,39 @@ const App = () => {
             </div>
             <div
               data-aos="fade-right"
-              className="col-12 about-us py-4 col-md-6 d-flex justify-content-center align-items-center rounded-pill rounded-start"
+              className="col-12 text-white about-us py-4 col-md-6 d-flex flex-column justify-content-center align-items-center"
             >
-              <h1 className="text-white about-h1" data-aos="zoom-in">
-                About Us
-              </h1>
+              <h2
+                className="about-h1"
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
+                About Our Company
+              </h2>
+
+              <p data-aos="fade-up" data-aos-delay="100">
+                We’re a professional Car & Bike Wash team delivering a showroom
+                shine.
+              </p>
+              <p data-aos="fade-up" data-aos-delay="200">
+                From foam wash to detailing, we treat every vehicle with care.
+              </p>
+              <p data-aos="fade-up" data-aos-delay="300">
+                Our experts use modern tools and eco-friendly products for safe
+                cleaning.
+              </p>
+              <p data-aos="fade-up" data-aos-delay="400">
+                Fast service, flexible slots, and complete customer
+                satisfaction.
+              </p>
             </div>
           </div>
         </div>
 
-        <div className="container mt-5 py-5"></div>
+
+        
       </div>
+      {/* </div>  */}
     </>
   );
 };
