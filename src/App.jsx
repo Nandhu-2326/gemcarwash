@@ -5,13 +5,40 @@ import "./App.css";
 // import { Swiper, SwiperSlide } from "swiper/react";
 import { Button, Offcanvas } from "react-bootstrap";
 import Carousel from "./Carousel";
-
+// import { FaShower, FaSprayCan, FaTools, FaBroom } from "react-icons/fa";
 const App = () => {
   const [isLoading, setisLoading] = useState(true);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const features = [
+    {
+      icon: <img src="metrial.png" alt="" className="img-fluid" width={100} />,
+      title: "Contactless Washing",
+      text: "Safe and quick washing without any physical contact.",
+    },
+    {
+      icon: (
+        <img src="car-painting.png" alt="" className="img-fluid" width={100} />
+      ),
+      title: "Safety Materials",
+      text: "Eco-friendly cleaning solutions for your vehicle.",
+    },
+    {
+      icon: <img src="car-wash.png" alt="" className="img-fluid" width={100} />,
+      title: "Modern Equipment",
+      text: "Latest technology for efficient car cleaning.",
+    },
+    {
+      icon: (
+        <img src="upholstery.png" alt="" className="img-fluid" width={100} />
+      ),
+      title: "Extensive Cleaning",
+      text: "Thorough cleaning for every part of your vehicle.",
+    },
+  ];
 
   useEffect(() => {
     AOS.init({
@@ -160,7 +187,41 @@ const App = () => {
           </div>
         </div>
 
-        <div className="container-fluid  " style={{ overflow: "hidden" }}>
+        <div className="container py-5">
+          <div className="row text-center">
+            {features.map((feature, index) => (
+              <div key={index} className="col-md-6 col-lg-3 mb-4">
+                <div className="p-4 bg-primary text-white rounded-3 h-100">
+                  <div className="mb-3">{feature.icon}</div>
+                  <h5>{feature.title}</h5>
+                  <p className="mb-0">{feature.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="container">
+          <div className="row">
+            <div className="col-12 col-md-6 d-flex justify-content-between p-0 align-items-center shadow rounded-3 rounded">
+              <div className="d-flex flex-column align-items-around justify-content-center ms-5 ">
+                <h2 className="text-center text-dark">Car Details</h2>
+                <button className="car-details">Details</button>
+              </div>
+              <div>
+                <img
+                  src="side-car.png"
+                  alt=""
+                  className="img-fluid "
+                  width={330}
+                />
+              </div>
+            </div>
+            <div className="col-12 col-md-6 d-flex justify-content-arount align-items-center"></div>
+          </div>
+        </div>
+
+        <div className="container-fluid  mt-5" style={{ overflow: "hidden" }}>
           <div className="row flex-row-reverse">
             <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
               <img
@@ -200,9 +261,6 @@ const App = () => {
             </div>
           </div>
         </div>
-
-
-        
       </div>
       {/* </div>  */}
     </>

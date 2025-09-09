@@ -69,4 +69,22 @@
     margin-top: 6px;       /* space between text and line */
     border-radius:10px;    /* optional: rounded line */
   }
+
+  /* car bike details */
+  .car-details {
+    background-color: rgb(55, 143, 194);
+    color: #fff;               /* White text */
+    border: none;              /* Remove border */
+    padding: 10px 20px;        /* Add spacing */
+    border-radius: 8px;        /* Rounded corners */
+    font-size: 16px;           /* Readable font size */
+    font-weight: 500;          /* Medium bold */
+    cursor: pointer;           /* Pointer on hover */
+    transition: all 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .car-details:hover {
+    background-color: rgb(40, 120, 170); /* Slightly darker on hover */
+    transform: scale(1.05);              /* Small zoom effect */
+  }
   
