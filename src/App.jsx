@@ -72,8 +72,9 @@ const App = () => {
         {/* Overlay Content */}
         <div className="d-flex justify-content-center align-items-center ">
           <h1
-            className="text-dark fw-bold text-center display-2 loading-title"
+            className=" fw-bold text-center display-2 loading-title"
             data-aos="zoom-in"
+            style={{ color: "rgba(55, 143, 194, 0.85)" }}
           >
             Welcome GEM Car Wash
           </h1>
@@ -189,35 +190,73 @@ const App = () => {
 
         <div className="container py-5">
           <div className="row text-center">
-            {features.map((feature, index) => (
-              <div key={index} className="col-md-6 col-lg-3 mb-4">
-                <div className="p-4 bg-primary text-white rounded-3 h-100">
-                  <div className="mb-3">{feature.icon}</div>
-                  <h5>{feature.title}</h5>
-                  <p className="mb-0">{feature.text}</p>
+            {features.map((feature, index) => {
+              // set AOS animation based on index
+              let aosEffect = "";
+              if (index === 1) aosEffect = "fade-left";
+              else if (index === 2) aosEffect = "fade-up";
+              else aosEffect = "fade-right"; // default
+
+              return (
+                <div
+                  key={index}
+                  className="col-md-6 col-lg-3 mb-4"
+                  data-aos={aosEffect}
+                  data-aos-duration="2500"
+                >
+                  <div
+                    className="glass-card p-4 text-white rounded-3 h-100"
+                    style={{
+                      background:
+                        "linear-gradient(135deg, rgba(55, 143, 194, 0.85), rgba(10, 40, 80, 0.85))",
+                    }}
+                  >
+                    <div className="mb-3 fs-1">{feature.icon}</div>
+                    <h5>{feature.title}</h5>
+                    <p className="mb-0">{feature.text}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
 
-        <div className="container">
-          <div className="row">
-            <div className="col-12 col-md-6 d-flex justify-content-between p-0 align-items-center shadow rounded-3 rounded">
-              <div className="d-flex flex-column align-items-around justify-content-center ms-5 ">
-                <h2 className="text-center text-dark">Car Details</h2>
-                <button className="car-details">Details</button>
-              </div>
-              <div>
-                <img
-                  src="side-car.png"
-                  alt=""
-                  className="img-fluid "
-                  width={330}
-                />
+        <div className="container py-5">
+          <div className="row d-flex justify-content-center justify-content-md-around g-4">
+            {/* Car Card */}
+            <div className="col-12 col-md-5">
+              <div className="carbike d-flex justify-content-between align-items-center p-4 shadow rounded-4 h-100">
+                <div className="d-flex flex-column justify-content-center align-items-start text-start">
+                  <h2 className="fw-bold text-dark mb-3">Car Details</h2>
+                  <button className="details-btn">Details</button>
+                </div>
+                <div>
+                  <img
+                    src="blue-bg.png"
+                    alt="Car"
+                    className="img-fluid"
+                    width={280}
+                  />
+                </div>
               </div>
             </div>
-            <div className="col-12 col-md-6 d-flex justify-content-arount align-items-center"></div>
+
+            {/* Bike Card */}
+            <div className="col-12 col-md-5">
+              <div className="carbike d-flex justify-content-between align-items-center p-4 shadow rounded-4 h-100 flex-md-row flex-column-reverse">
+                <img
+                  src="bike-removebg-preview.png"
+                  alt="Bike"
+                  className="img-fluid"
+                  width={250}
+                />
+
+                <div className="d-flex flex-column justify-content-center align-items-start text-start ms-md-4">
+                  <h2 className="fw-bold text-dark mb-3">Bike Details</h2>
+                  <button className="details-btn">Details</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 

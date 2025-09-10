@@ -69,7 +69,21 @@
     margin-top: 6px;       /* space between text and line */
     border-radius:10px;    /* optional: rounded line */
   }
-
+  /*Glass style  */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+  }
+  
   /* car bike details */
   .car-details {
     background-color: rgb(55, 143, 194);
@@ -87,4 +101,36 @@
     background-color: rgb(40, 120, 170); /* Slightly darker on hover */
     transform: scale(1.05);              /* Small zoom effect */
   }
+
+  .carbike {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); */
+    transition: all 0.3s ease;
+  }
+  
+  .carbike:hover {
+    transform: translateY(-8px);
+    /* box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25); */
+  }
+  
+  .details-btn {
+    background: linear-gradient(135deg, rgb(55, 143, 194), rgb(10, 40, 80));
+    border: none;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+  }
+  
+  .details-btn:hover {
+    background: linear-gradient(135deg, rgb(10, 40, 80), rgb(55, 143, 194));
+    box-shadow: 0 6px 15px rgba(55, 143, 194, 0.5);
+    transform: scale(1.05);
+  }
+  
   
