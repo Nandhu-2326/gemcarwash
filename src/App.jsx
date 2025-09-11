@@ -43,7 +43,7 @@ const App = () => {
   useEffect(() => {
     AOS.init({
       duration: 1200, // animation duration (ms)
-      once: true, // whether animation should happen only once
+      once: false, // whether animation should happen only once
     });
   });
 
@@ -86,7 +86,7 @@ const App = () => {
   return (
     <>
       <div className="body">
-        <div className="container-fluid video-container ">
+        <div className="container-fluid video-container">
           {/* desktop mood */}
           <div className="d-md-flex justify-content-between align-items-center d-none ">
             <img
@@ -107,7 +107,7 @@ const App = () => {
           {/*  */}
           {/* This button will only show on small screens */}
           <div className="row py-2 d-md-none ">
-            <div className="col-12 d-flex justify-content-between fixed-top py-3 bg-white  align-items-center">
+            <div className="col-12 shadow d-flex justify-content-between fixed-top py-3 bg-white  align-items-center">
               <h1 className="display-4" data-aos="fade-left">
                 GEM CAR WASH
               </h1>
@@ -131,14 +131,27 @@ const App = () => {
           " // hide on md and above
               >
                 <Offcanvas.Header closeButton>
-                  <Offcanvas.Title>Menu</Offcanvas.Title>
+                  <Offcanvas.Title>Gem Menu</Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                  <ul>
-                    <li>home</li>
-                    <li>home</li>
-                    <li>home</li>
-                    <li>home</li>
+                  <ul className="list-unstyled fs-2 d-flex flex-column gap-3">
+                    <li className="d-flex align-items-center gap-2">
+                      {" "}
+                      <img width={30} src="charging-station.png" alt="" /> Home
+                    </li>
+
+                    <li className="d-flex align-items-center gap-2">
+                      {" "}
+                      <img width={30} src="mechanic.png" alt="" /> Service
+                    </li>
+                    <li className="d-flex align-items-center gap-2">
+                      {" "}
+                      <img width={30} src="operator.png" alt="" /> Contact
+                    </li>
+                    <li className="d-flex align-items-center gap-2">
+                      {" "}
+                      <img width={30} src="info.png" alt="" /> About
+                    </li>
                   </ul>
                 </Offcanvas.Body>
               </Offcanvas>
@@ -159,7 +172,10 @@ const App = () => {
           <Carousel />
         </div>
 
-        <div className="container-fluid car-background">
+        <div
+          className="container-fluid car-background"
+          style={{ overflow: "hidden" }}
+        >
           <div className="row d-flex  align-items-center py-3">
             <div className="col-md-6 mt-4 col-12 text-white">
               <h1 className="title" data-aos="zoom-out">
@@ -188,7 +204,7 @@ const App = () => {
           </div>
         </div>
 
-        <div className="container py-5">
+        <div className="container py-5" style={{ overflow: "hidden" }}>
           <div className="row text-center">
             {features.map((feature, index) => {
               // set AOS animation based on index
@@ -221,59 +237,20 @@ const App = () => {
           </div>
         </div>
 
-        <div className="container py-5">
-          <div className="row d-flex justify-content-center justify-content-md-around g-4">
-            {/* Car Card */}
-            <div className="col-12 col-md-5">
-              <div className="carbike d-flex justify-content-between align-items-center p-4 shadow rounded-4 h-100">
-                <div className="d-flex flex-column justify-content-center align-items-start text-start">
-                  <h2 className="fw-bold text-dark mb-3">Car Details</h2>
-                  <button className="details-btn">Details</button>
-                </div>
-                <div>
-                  <img
-                    src="blue-bg.png"
-                    alt="Car"
-                    className="img-fluid"
-                    width={280}
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Bike Card */}
-            <div className="col-12 col-md-5">
-              <div className="carbike d-flex justify-content-between align-items-center p-4 shadow rounded-4 h-100 flex-md-row flex-column-reverse">
-                <img
-                  src="bike-removebg-preview.png"
-                  alt="Bike"
-                  className="img-fluid"
-                  width={250}
-                />
-
-                <div className="d-flex flex-column justify-content-center align-items-start text-start ms-md-4">
-                  <h2 className="fw-bold text-dark mb-3">Bike Details</h2>
-                  <button className="details-btn">Details</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="container-fluid  mt-5" style={{ overflow: "hidden" }}>
+        <div className="container-fluid  mt-5" style={{ overflow: "hidden " }}>
           <div className="row flex-row-reverse">
-            <div className="col-12 col-md-6 d-flex justify-content-center align-items-center">
+            <div
+              className="col-12 col-md-6  d-flex justify-content-center align-items-center"
+              style={{ background: "black" }}
+            >
               <img
-                src="blue-bg.png"
+                src="about-car.png"
                 alt=""
                 className="img-fluid"
                 data-aos="fade-left"
               />
             </div>
-            <div
-              data-aos="fade-right"
-              className="col-12 text-white about-us py-4 col-md-6 d-flex flex-column justify-content-center align-items-center"
-            >
+            <div className="col-12 text-white about-us py-4 col-md-6 d-flex flex-column justify-content-center align-items-center">
               <h2
                 className="about-h1"
                 data-aos="fade-up"
@@ -297,6 +274,63 @@ const App = () => {
                 Fast service, flexible slots, and complete customer
                 satisfaction.
               </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="container py-5" style={{ overflow: "hidden" }}>
+          <div className="row d-flex justify-content-center justify-content-md-around g-4">
+            {/* Car Card */}
+            <div className="col-12 col-md-5" data-aos="fade-right">
+              <div
+                className="carbike d-flex justify-content-between align-items-center p-4 shadow rounded-4 h-100"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(55, 143, 194, 0.85), rgba(10, 40, 80, 0.85))",
+                }}
+              >
+                <div className="d-flex flex-column justify-content-center align-items-center text-start">
+                  <h2 className="fw-bold text-white text-center mb-3">
+                    Car Details
+                  </h2>
+                  <button className="details-btn">Details</button>
+                </div>
+                <div>
+                  <img
+                    src="blue-bg.png"
+                    alt="Car"
+                    className="img-fluid"
+                    width={280}
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Bike Card */}
+            <div className="col-12 col-md-5" data-aos="fade-left">
+              <div
+                className="carbike d-flex justify-content-between align-items-center p-4 shadow rounded-4 h-100 flex-md-row "
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(55, 143, 194, 0.85), rgba(10, 40, 80, 0.85))",
+                }}
+              >
+                <div>
+                  <img
+                    src="bike-removebg-preview.png"
+                    alt="Bike"
+                    className="img-fluid"
+                    width={200}
+                  />
+                </div>
+
+                <div className="d-flex flex-column justify-content-center align-items-center text-start ms-md-4">
+                  <h2 className="fw-bold text-white mb-3 text-center">
+                    Bike Details
+                  </h2>
+                  <button className="details-btn">Details</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

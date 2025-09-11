@@ -15,14 +15,14 @@
     padding: 10px 20px;
     border: none;
     outline: none;
-    background: rgb(55, 143, 194);
+    background: linear-gradient(135deg, rgb(22, 76, 148), rgb(9, 100, 153));
     color: whitesmoke;
   }
   .contact-btn:hover{
     padding: 10px 20px;
     border: none;
     outline: none;
-    background: rgb(36, 156, 226);
+    background: linear-gradient(135deg, rgb(4, 59, 131), rgb(55, 143, 194));    
     color: whitesmoke;
   }
   .car-background {
@@ -32,12 +32,15 @@
     overflow: hidden;
               /* Full width */
   }
-  
+  /* offcanvas */
+  ul li{
+  font-family: 'Poppins', sans-serif;
+  }
 
   .btn-book {
    
-    padding: 12px 30px;
-    background: rgb(36, 156, 226);
+    padding: 12px 30px;    
+    background: linear-gradient(135deg, rgb(22, 76, 148), rgb(9, 100, 153));
     border: none;
     color: #fff;
     outline: none;
@@ -48,8 +51,7 @@
   }
 
   .btn-book:hover {
-    background: rgb(55, 143, 194);
-    
+    background: linear-gradient(135deg, rgb(4, 59, 131), rgb(55, 143, 194));    
   }
 
   /*  About Us*/
@@ -117,20 +119,21 @@
   }
   
   .details-btn {
-    background: linear-gradient(135deg, rgb(55, 143, 194), rgb(10, 40, 80));
+    background: linear-gradient(135deg, rgb(255, 255, 255), rgb(255, 255, 255));
     border: none;
-    color: #fff;
-    padding: 10px 24px;
-    border-radius: 50px;
+    color: #0c6bfa;
+    padding: 7px 24px;
+    border-radius: 10px;
     font-weight: 600;
     letter-spacing: 1px;
     transition: 0.3s ease;
   }
   
   .details-btn:hover {
-    background: linear-gradient(135deg, rgb(10, 40, 80), rgb(55, 143, 194));
+    background: linear-gradient(135deg, rgb(76, 136, 214), rgb(55, 143, 194));
     box-shadow: 0 6px 15px rgba(55, 143, 194, 0.5);
     transform: scale(1.05);
+    color: white;
   }
   
   
