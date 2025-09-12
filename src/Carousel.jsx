@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import "./Carousel.css";
 
 // Import required modules
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
@@ -17,22 +18,21 @@ export default function Carousel() {
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
         slidesPerView={1}
-        pagination={{ clickable: true }}
         autoplay={{ delay: 3000 }}
         loop={true}
-        className="rounded-2xl "
+        className="mySwiper rounded-2xl"
       >
         <SwiperSlide>
-          <img src="car1.jpg" alt="" className="img-fluid w-100" />
+          <img src="car1.jpg" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="car4.jpg" alt="" className="img-fluid w-100" />
+          <img src="car4.jpg" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="car2.jpg" alt="" className="img-fluid w-100" />
+          <img src="car2.jpg" alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="car3.jpg" alt="" className="img-fluid w-100" />
+          <img src="car3.jpg" alt="" />
         </SwiperSlide>
       </Swiper>
     </div>

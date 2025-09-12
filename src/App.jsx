@@ -6,6 +6,11 @@ import "./App.css";
 import { Button, Offcanvas } from "react-bootstrap";
 import Carousel from "./Carousel";
 // import { FaShower, FaSprayCan, FaTools, FaBroom } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+// Import Autoplay module
+import { Autoplay } from "swiper/modules";
 const App = () => {
   const [isLoading, setisLoading] = useState(true);
   const [show, setShow] = useState(false);
@@ -168,43 +173,27 @@ const App = () => {
           </div>
         </div>
 
-        <div className="container-fluid mb-5 mt-2">
+        {/* <div className="container-fluid mb-5 mt-2">
           <Carousel />
-        </div>
+        </div> */}
 
-        <div
-          className="container-fluid car-background"
-          style={{ overflow: "hidden" }}
-        >
-          <div className="row d-flex  align-items-center py-3">
-            <div className="col-md-6 mt-4 col-12 text-white">
-              <h1 className="title" data-aos="zoom-out">
-                Premium Car & Bike Wash
-              </h1>
-              <p className="desc" data-aos="zoom-in">
-                Experience the shine your ride deserves – trusted care for every
-                detail. Our professional team uses advanced techniques and
-                high-quality products to give your car and bike a spotless
-                finish that lasts.
+        <div className="container-fluid car-banner ">
+          <div>
+            <h1>Premium Car & Bike Wash</h1>
+            <p className="d-flex flex-column px-3 py-3 align-items-center">
+              <button className="btn-book w-50">Book Now</button>
+              <p className="mt-2 fs-5">
+                Because a clean car isn’t just about looks — it’s about
+                confidence, care, and driving with pride.
               </p>
-              <p className="desc" data-aos="zoom-out">
-                From exterior hand wash to deep interior detailing, we ensure
-                every corner of your vehicle feels brand new. With eco-friendly
-                cleaning solutions, soft-touch technology, and expert finishing,
-                your ride gets the treatment it truly deserves.
-              </p>
-              <p className="desc" data-aos="zoom-in">
-                Drive with confidence, style, and pride – because your car or
-                bike is more than just a vehicle, it’s your lifestyle.
-              </p>
-              <div className="d-flex justify-content-center">
-                <button className="btn-book">Book Now</button>
-              </div>
-            </div>
+            </p>
           </div>
         </div>
 
-        <div className="container py-5" style={{ overflow: "hidden" }}>
+        <div
+          className="container py-5 px-4 px-md-0"
+          style={{ overflow: "hidden" }}
+        >
           <div className="row text-center">
             {features.map((feature, index) => {
               // set AOS animation based on index
@@ -243,12 +232,27 @@ const App = () => {
               className="col-12 col-md-6  d-flex justify-content-center align-items-center"
               style={{ background: "black" }}
             >
-              <img
-                src="about-car.png"
-                alt=""
-                className="img-fluid"
-                data-aos="fade-left"
-              />
+              <Swiper
+                modules={[Autoplay]}
+                spaceBetween={30}
+                slidesPerView={1}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                className="mySwiper"
+              >
+                <SwiperSlide>
+                  <img src="about-car.png" alt="Car 1" className="img-fluid" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src="car-blue.png" alt="Car 2" className="img-fluid" />
+                </SwiperSlide>
+                <SwiperSlide>
+                  <img src="blue-bg.png" alt="Car 3" className="img-fluid" />
+                </SwiperSlide>
+              </Swiper>
             </div>
             <div className="col-12 text-white about-us py-4 col-md-6 d-flex flex-column justify-content-center align-items-center">
               <h2
@@ -334,6 +338,39 @@ const App = () => {
             </div>
           </div>
         </div>
+
+        {/* 
+        <div
+          className="container-fluid car-background"
+          style={{ overflow: "hidden" }}
+        >
+          <div className="row d-flex  align-items-center py-3">
+            <div className="col-md-6 mt-4 col-12 text-white">
+              <h1 className="title" data-aos="zoom-out">
+                Premium Car & Bike Wash
+              </h1>
+              <p className="desc" data-aos="zoom-in">
+                Experience the shine your ride deserves – trusted care for every
+                detail. Our professional team uses advanced techniques and
+                high-quality products to give your car and bike a spotless
+                finish that lasts.
+              </p>
+              <p className="desc" data-aos="zoom-out">
+                From exterior hand wash to deep interior detailing, we ensure
+                every corner of your vehicle feels brand new. With eco-friendly
+                cleaning solutions, soft-touch technology, and expert finishing,
+                your ride gets the treatment it truly deserves.
+              </p>
+              <p className="desc" data-aos="zoom-in">
+                Drive with confidence, style, and pride – because your car or
+                bike is more than just a vehicle, it’s your lifestyle.
+              </p>
+              <div className="d-flex justify-content-center">
+                <button className="btn-book">Book Now</button>
+              </div>
+            </div>
+          </div>
+        </div> */}
       </div>
       {/* </div>  */}
     </>

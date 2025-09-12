@@ -53,6 +53,40 @@
   .btn-book:hover {
     background: linear-gradient(135deg, rgb(4, 59, 131), rgb(55, 143, 194));    
   }
+  /* car banner */
+  .car-banner {
+    position: relative;
+    background: url("banner.jpg") no-repeat center center;
+    background-size: cover;
+    height: 400px;
+    width: 100%;
+    display: flex;
+    align-items: center;   /* vertical center text */
+    justify-content: center; /* horizontal center text */
+    color: white; /* text color */
+    text-align: center;
+    overflow: hidden;
+  }
+  
+  /* black overlay */
+  .car-banner::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5); /* adjust transparency */
+    z-index: 1;
+  }
+  
+  /* text on top */
+  .car-banner h1,
+  .car-banner p {
+    position: relative;
+    z-index: 2; /* ensures text is above overlay */
+  }
+  
 
   /*  About Us*/
   .about-us{
