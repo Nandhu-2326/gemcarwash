@@ -12,6 +12,7 @@ import "swiper/css";
 import { Autoplay } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
 import Navbar from "./Navbar";
+import Car from "./Car";
 const App = () => {
   const [isLoading, setisLoading] = useState(true);
 
@@ -100,7 +101,14 @@ const App = () => {
           <div>
             <h1>Premium Car & Bike Wash</h1>
             <p className="d-flex flex-column px-3 py-3 align-items-center">
-              <button className="btn-book w-50">Book Now</button>
+              <button
+                className="btn-book w-50"
+                onClick={() => {
+                  nav("car~");
+                }}
+              >
+                Book Now
+              </button>
               <p className="mt-2 fs-5">
                 Because a clean car isn’t just about looks — it’s about
                 confidence, care, and driving with pride.
