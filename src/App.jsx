@@ -17,6 +17,38 @@ const App = () => {
   const [isLoading, setisLoading] = useState(true);
 
   const nav = useNavigate();
+  const [form, setForm] = useState({
+    name: "",
+    vehicle: "Car",
+    time: "",
+    address: "",
+  });
+
+  // Handle input change
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // Handle submit
+  const handleSubmit = () => {
+    if (!form.name || !form.time || !form.address) {
+      alert("Please fill all fields!");
+      return;
+    }
+
+    // Format WhatsApp message
+    const message = `Hello, I want to book a wash:
+Name: ${form.name}
+Vehicle: ${form.vehicle}
+Time: ${form.time}
+Address: ${form.address}`;
+
+    // Open WhatsApp
+    const url = `https://wa.me/917904746889?text=${encodeURIComponent(
+      message
+    )}`;
+    window.open(url, "_blank");
+  };
 
   const features = [
     {
@@ -100,7 +132,7 @@ const App = () => {
         <div className="container-fluid car-banner ">
           <div>
             <h1>Premium Car & Bike Wash</h1>
-            <p className="d-flex flex-column px-3 py-3 align-items-center">
+            <p className="d-flex flex-column px-3  py-3 align-items-center ">
               <button
                 className="btn-book w-50"
                 onClick={() => {
@@ -113,6 +145,7 @@ const App = () => {
                 Because a clean car isn’t just about looks — it’s about
                 confidence, care, and driving with pride.
               </p>
+              <p className="mt-2 fs-1">Open and Close Time 6 AM to 6 PM</p>
             </p>
           </div>
         </div>
@@ -280,40 +313,121 @@ const App = () => {
           </div>
         </div>
 
-        {/* 
         <div
-          className="container-fluid car-background"
-          style={{ overflow: "hidden" }}
+          className="container-fluid  py-3"
+          style={{
+            backgroundImage: "url(lable.jpg)",
+            backgroundSize: "cover", // makes it cover full div
+            backgroundPosition: "center", // keeps it centered
+            backgroundRepeat: "no-repeat", // avoid tiling
+          }}
         >
-          <div className="row d-flex  align-items-center py-3">
-            <div className="col-md-6 mt-4 col-12 text-white">
-              <h1 className="title" data-aos="zoom-out">
-                Premium Car & Bike Wash
-              </h1>
-              <p className="desc" data-aos="zoom-in">
-                Experience the shine your ride deserves – trusted care for every
-                detail. Our professional team uses advanced techniques and
-                high-quality products to give your car and bike a spotless
-                finish that lasts.
-              </p>
-              <p className="desc" data-aos="zoom-out">
-                From exterior hand wash to deep interior detailing, we ensure
-                every corner of your vehicle feels brand new. With eco-friendly
-                cleaning solutions, soft-touch technology, and expert finishing,
-                your ride gets the treatment it truly deserves.
-              </p>
-              <p className="desc" data-aos="zoom-in">
-                Drive with confidence, style, and pride – because your car or
-                bike is more than just a vehicle, it’s your lifestyle.
-              </p>
-              <div className="d-flex justify-content-center">
-                <button className="btn-book">Book Now</button>
+          <div className="row p-3 d-flex justify-content-center">
+            <div
+              className="col-12 col-md-6 p-5 text-white"
+              style={{
+                borderRadius: "20px",
+                padding: "20px",
+                background: "rgba(255, 255, 255, 0.1)",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+                boxShadow: "0 8px 10px rgba(0, 0, 0, 0.3)",
+                overflow: "hidden",
+                position: "relative",
+              }}
+            >
+              <h2 className="mb-4">Book Your Wash</h2>
+              <div className="mb-3">
+                <label className="form-label">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  value={form.name}
+                  onChange={handleChange}
+                  className="form-control"
+                  placeholder="Enter your name"
+                />
               </div>
+
+              <div className="mb-3">
+                <label className="form-label">Choose Vehicle</label>
+                <select
+                  name="vehicle"
+                  value={form.vehicle}
+                  onChange={handleChange}
+                  className="form-select"
+                >
+                  <option value="Car">Car</option>
+                  <option value="Bike">Bike</option>
+                </select>
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label">Choose Time (6 AM - 6 PM)</label>
+                <input
+                  type="time"
+                  name="time"
+                  value={form.time}
+                  min="06:00"
+                  max="18:00"
+                  onChange={handleChange}
+                  className="form-control"
+                />
+              </div>
+
+              <div className="mb-3">
+                <label className="form-label">Address</label>
+                <textarea
+                  name="address"
+                  value={form.address}
+                  onChange={handleChange}
+                  className="form-control"
+                  placeholder="Enter your address"
+                ></textarea>
+              </div>
+
+              <button onClick={handleSubmit} className="btn btn-primary w-100">
+                Submit on WhatsApp
+              </button>
             </div>
           </div>
-        </div> */}
+        </div>
+
+        <div className="container-fluid mt-5" style={{ background: "black" }}>
+          <h1 className="text-uppercase fs-1 text-white text-center">
+            Contact
+          </h1>
+          <div className="row">
+            <div className="col-12 col-sm-6 col-md-4"></div>
+            <div className="col-12 col-sm-6 col-md-4"></div>
+            <div className="col-12 col-sm-6 col-md-4 text-white">
+              <h1 className="text-center">Follow Us</h1>
+              <div className="contact-info d-flex flex-column align-items-center">
+  <div className="contact-item d-flex align-items-center mb-2">
+    <img src="whatsapp.png" alt="WhatsApp" className="contact-icon me-2" />
+    <span>7904746889</span>
+  </div>
+
+  <div className="contact-item d-flex align-items-center mb-2">
+    <img src="instagram.png" alt="Instagram" className="contact-icon me-2" />
+    <a
+      href="https://www.instagram.com/gem_water_wash/"
+      className="text-white"
+    >
+      gem_water_wash
+    </a>
+  </div>
+
+  <div className="contact-item d-flex align-items-center mb-2">
+    <img src="gmail.png" alt="Gmail" className="contact-icon me-2" />
+    <span>mpoobalan15@gmail.com</span>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </div>
       </div>
-      {/* </div>  */}
     </>
   );
 };
