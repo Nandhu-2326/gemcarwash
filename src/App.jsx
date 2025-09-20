@@ -271,13 +271,9 @@ Address: ${form.address}`;
           </div>
         </div>
 
-        {/* <div className="container-fluid mb-5 mt-2">
-          <Carousel />
-        </div> */}
-
         <div className="container-fluid car-banner ">
           <div>
-            <h1>Premium Car & Bike Wash</h1>
+            <h1 className="mt-5">Premium Car & Bike Wash</h1>
             <p className="d-flex flex-column px-3  py-3 align-items-center ">
               <button
                 className="btn-book w-50"
@@ -354,12 +350,6 @@ Address: ${form.address}`;
                 }}
                 className="mySwiper"
               >
-                <SwiperSlide>
-                  <img src="about-car.png" alt="Car 1" className="img-fluid" />
-                </SwiperSlide>
-                <SwiperSlide>
-                  <img src="car-blue.png" alt="Car 2" className="img-fluid" />
-                </SwiperSlide>
                 <SwiperSlide>
                   <img src="blue-bg.png" alt="Car 3" className="img-fluid" />
                 </SwiperSlide>

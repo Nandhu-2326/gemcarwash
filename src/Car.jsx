@@ -194,6 +194,8 @@ const Car = () => {
                           borderRadius: "50px",
                           boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
                           cursor: "pointer",
+                          fontFamily: "'Poppins', sans-serif",
+
                           transition: "all 0.3s ease",
                         }}
                         onClick={() => sendWhatsAppMessage(car.seats)}

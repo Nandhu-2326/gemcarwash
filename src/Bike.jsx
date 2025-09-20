@@ -105,7 +105,7 @@ const Bike = () => {
                     className="img-fluid p-3 py-5"
                   />
                 </div>
-                <div className="col-12 col-md-6 d-flex">
+                <div className="col-12 col-md-6 d-flex justify-content-center">
                   {carWashOptions.map((car) => (
                     <div
                       key={car.id}
@@ -151,7 +151,8 @@ const Bike = () => {
                         <button
                           className="btn"
                           style={{
-                            backgroundColor: "white",
+                          fontFamily: "'Poppins', sans-serif",
+                          backgroundColor: "white",
                             color: "rgb(55, 143, 194)",
                             padding: "10px 24px",
                             fontSize: "16px",
