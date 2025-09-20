@@ -7,6 +7,7 @@
 .body{
   background-color: #ffffff;
   font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
 }
 .loading-title{
   font-family: 'Poppins', sans-serif;
@@ -56,7 +57,7 @@
   /* car banner */
   .car-banner {
     position: relative;
-    background: url("banner.jpg") no-repeat center center;
+    background: url("/public/banner.jpg") no-repeat center center;
     background-size: cover;
     height: 400px;
     width: 100%;

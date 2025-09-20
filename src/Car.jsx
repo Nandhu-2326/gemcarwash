@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "./Navbar";
 import "./App.css";
 import "aos/dist/aos.css";
 import { useNavigate } from "react-router-dom";
@@ -129,7 +128,7 @@ const Car = () => {
 
                   <div style={{ position: "relative", zIndex: 1 }}>
                     <h1
-                      className="text-center text-uppercase fs-3 text-dark mb-3"
+                      className="text-center text-uppercase fs-3 text-white mb-3"
                       style={{ fontFamily: "'Poppins', sans-serif" }}
                     >
                       {car.title}
@@ -150,6 +149,7 @@ const Car = () => {
                             fontWeight: "600",
                             fontFamily: "'Poppins', sans-serif",
                           }}
+                          className="text-white"
                         >
                           Car Service {car.price}
                         </h2>

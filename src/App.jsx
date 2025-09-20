@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import "./App.css";
+import { Button, Offcanvas } from "react-bootstrap";
+
 // import { Swiper, SwiperSlide } from "swiper/react";
 
 // import { FaShower, FaSprayCan, FaTools, FaBroom } from "react-icons/fa";
@@ -11,10 +13,12 @@ import "swiper/css";
 // Import Autoplay module
 import { Autoplay } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
-import Navbar from "./Navbar";
-import Car from "./Car";
+
 const App = () => {
   const [isLoading, setisLoading] = useState(true);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const [show, setShow] = useState(false);
 
   const nav = useNavigate();
   const [form, setForm] = useState({
@@ -123,7 +127,149 @@ Address: ${form.address}`;
   return (
     <>
       <div className="body">
-        <Navbar />
+        <div className="container-fluid video-container" id="home">
+          {/* desktop mood */}
+          <div className="d-md-flex justify-content-between align-items-center d-none ">
+            <img
+              src="logos-removebg-preview.png"
+              width={200}
+              alt=""
+              className="img-fluid"
+            />
+            <ul className="list-unstyled d-flex jusitfy-content-between nav-list align-items-center gap-5 fw-bold ">
+              <ul className="d-flex list-unstyled gap-4">
+                <li>
+                  <a href="#home" className=" text-decoration-none text-dark">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="#car" className=" text-decoration-none text-dark">
+                    Car Wash
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#services"
+                    className=" text-decoration-none text-dark"
+                  >
+                    Services
+                  </a>
+                </li>
+
+                <li>
+                  <a href="#about" className=" text-decoration-none text-dark">
+                    About
+                  </a>
+                </li>
+              </ul>
+            </ul>
+            <button className="contact-btn rounded ">
+              <a href="#contact" className="text-decoration-none text-white">
+                Contact
+              </a>
+            </button>
+          </div>
+
+          {/*  */}
+          {/* This button will only show on small screens */}
+          <div className="row py-2 d-md-none ">
+            <div className="col-12 shadow d-flex justify-content-between fixed-top py-3 bg-white  align-items-center">
+              <h1 className="display-4" data-aos="fade-left">
+                GEM CAR WASH
+              </h1>
+              <Button
+                className="d-md-none bg-white border-0"
+                onClick={handleShow}
+              >
+                <img
+                  src="hamburger.png"
+                  width={30}
+                  alt=""
+                  className="img-fluid"
+                />
+              </Button>
+
+              <Offcanvas
+                show={show}
+                onHide={handleClose}
+                placement="start" // left side
+                className="d-md-none
+          " // hide on md and above
+              >
+                <Offcanvas.Header closeButton>
+                  <Offcanvas.Title
+                    style={{ fontStyle: "'Poppins', sans-serif" }}
+                  >
+                    Gem Menu
+                  </Offcanvas.Title>
+                </Offcanvas.Header>
+                <Offcanvas.Body>
+                  <ul className="list-unstyled fs-2 d-flex flex-column gap-3">
+                    <li className="d-flex align-items-center gap-2">
+                      <a
+                        href="#home"
+                        className=" text-decoration-none text-dark d-flex align-items-center gap-2"
+                        onClick={handleClose}
+                      >
+                        <img width={30} src="charging-station.png" alt="" />{" "}
+                        Home
+                      </a>
+                    </li>
+                    <li className="d-flex align-items-center gap-2">
+                      <a
+                        href="#car"
+                        className=" text-decoration-none text-dark d-flex align-items-center gap-2"
+                        onClick={handleClose}
+                      >
+                        <img width={30} src="blue-bg.png" alt="" /> Car Wash
+                      </a>
+                    </li>
+
+                    <li className="d-flex align-items-center gap-2">
+                      <a
+                        href="#services"
+                        className=" text-decoration-none text-dark d-flex align-items-center gap-2"
+                        onClick={handleClose}
+                      >
+                        <img width={30} src="mechanic.png" alt="" /> Service
+                      </a>
+                    </li>
+
+                    <li className="d-flex align-items-center gap-2">
+                      <a
+                        href="#contact"
+                        className=" text-decoration-none text-dark d-flex align-items-center gap-2"
+                        onClick={handleClose}
+                      >
+                        <img width={30} src="operator.png" alt="" /> Contact
+                      </a>
+                    </li>
+
+                    <li className="d-flex align-items-center gap-2">
+                      <a
+                        href="#about"
+                        className=" text-decoration-none text-dark d-flex align-items-center gap-2"
+                        onClick={handleClose}
+                      >
+                        <img width={30} src="info.png" alt="" /> About
+                      </a>
+                    </li>
+                  </ul>
+                </Offcanvas.Body>
+              </Offcanvas>
+            </div>
+
+            <div className="col-12 mt-5 py-3">
+              {/* <img
+            src="logos-removebg-preview.png"
+            alt=""
+            data-aos="zoom-in"
+            className="img-fluid mt-5"
+          /> */}
+            </div>
+          </div>
+        </div>
 
         {/* <div className="container-fluid mb-5 mt-2">
           <Carousel />
@@ -136,7 +282,7 @@ Address: ${form.address}`;
               <button
                 className="btn-book w-50"
                 onClick={() => {
-                  nav("car~");
+                  nav("/car");
                 }}
               >
                 Book Now
@@ -153,6 +299,7 @@ Address: ${form.address}`;
         <div
           className="container py-5 px-4 px-md-0"
           style={{ overflow: "hidden" }}
+          id="services"
         >
           <div className="row text-center">
             {features.map((feature, index) => {
@@ -186,7 +333,11 @@ Address: ${form.address}`;
           </div>
         </div>
 
-        <div className="container-fluid  mt-5" style={{ overflow: "hidden " }}>
+        <div
+          className="container-fluid  mt-5"
+          style={{ overflow: "hidden " }}
+          id="about"
+        >
           <div className="row flex-row-reverse">
             <div
               className="col-12 col-md-6  d-flex justify-content-center align-items-center"
@@ -243,7 +394,10 @@ Address: ${form.address}`;
         </div>
 
         <div className="container py-5" style={{ overflow: "hidden" }}>
-          <div className="row d-flex justify-content-center justify-content-md-around g-4">
+          <div
+            className="row d-flex justify-content-center justify-content-md-around g-4"
+            id="car"
+          >
             {/* Car Card */}
             <div className="col-12 col-md-5" data-aos="fade-right">
               <div
@@ -393,40 +547,97 @@ Address: ${form.address}`;
           </div>
         </div>
 
-        <div className="container-fluid mt-5" style={{ background: "black" }}>
+        <div
+          className="container-fluid mt-5 p-3"
+          style={{ background: "black" }}
+          id="contact"
+        >
           <h1 className="text-uppercase fs-1 text-white text-center">
             Contact
           </h1>
-          <div className="row">
-            <div className="col-12 col-sm-6 col-md-4"></div>
-            <div className="col-12 col-sm-6 col-md-4"></div>
-            <div className="col-12 col-sm-6 col-md-4 text-white">
-              <h1 className="text-center">Follow Us</h1>
+          <div
+            style={{ width: "100%", height: "2px" }}
+            className="text-white bg-white"
+          ></div>
+          <div className="row mt-4">
+            <div className="col-12 col-sm-6 col-md-4">
+              <h1 className="text-white">Gem Car Wash</h1>
+              <span className="text-white fs-5">
+                Premium car wash solutions – trusted for shine & care.
+              </span>{" "}
+              <br />
+              <span className="text-white fs-5">
+                Excellence in every wash, trust in every shine.
+              </span>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 d-flex flex-column align-items-center ">
+              <h1 className="text-white text-center">Quick Link</h1>
+              <ul className="list-unstyled" style={{ gap: "10px" }}>
+                <li>
+                  <a href="" className="text-white text-decoration-none">
+                    {" "}
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a href="" className="text-white text-decoration-none">
+                    Service
+                  </a>
+                </li>
+                <li>
+                  <a href="" className="text-white text-decoration-none">
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a href="" className="text-white text-decoration-none">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="col-12 col-sm-6 col-md-4 text-white d-flex flex-column align-items-center">
+              <h1 className="">Follow Us</h1>
               <div className="contact-info d-flex flex-column align-items-center">
-  <div className="contact-item d-flex align-items-center mb-2">
-    <img src="whatsapp.png" alt="WhatsApp" className="contact-icon me-2" />
-    <span>7904746889</span>
-  </div>
+                <div className="contact-item d-flex align-items-center mb-2">
+                  <img
+                    src="whatsapp.png"
+                    alt="WhatsApp"
+                    className="contact-icon me-2"
+                  />
+                  <span>7904746889</span>
+                </div>
 
-  <div className="contact-item d-flex align-items-center mb-2">
-    <img src="instagram.png" alt="Instagram" className="contact-icon me-2" />
-    <a
-      href="https://www.instagram.com/gem_water_wash/"
-      className="text-white"
-    >
-      gem_water_wash
-    </a>
-  </div>
+                <div className="contact-item d-flex align-items-center mb-2">
+                  <img
+                    src="instagram.png"
+                    alt="Instagram"
+                    className="contact-icon me-2"
+                  />
+                  <a
+                    href="https://www.instagram.com/gem_water_wash/"
+                    className="text-white"
+                  >
+                    gem_water_wash
+                  </a>
+                </div>
 
-  <div className="contact-item d-flex align-items-center mb-2">
-    <img src="gmail.png" alt="Gmail" className="contact-icon me-2" />
-    <span>mpoobalan15@gmail.com</span>
-  </div>
-</div>
-
+                <div className="contact-item d-flex align-items-center mb-2">
+                  <img
+                    src="gmail.png"
+                    alt="Gmail"
+                    className="contact-icon me-2"
+                  />
+                  <span>mpoobalan15@gmail.com</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+        <div
+          style={{ width: "100%", height: "2px" }}
+          className="text-white bg-white"
+        ></div>
       </div>
     </>
   );

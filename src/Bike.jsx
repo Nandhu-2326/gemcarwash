@@ -105,7 +105,7 @@ const Bike = () => {
                     className="img-fluid p-3 py-5"
                   />
                 </div>
-                <div className="col-12 col-md-6">
+                <div className="col-12 col-md-6 d-flex">
                   {carWashOptions.map((car) => (
                     <div
                       key={car.id}
@@ -117,17 +117,10 @@ const Bike = () => {
                           fontWeight: "600",
                           fontFamily: "'Poppins', sans-serif",
                         }}
-                        className="text-center"
+                        className="text-center text-white"
                       >
                         Bike Service ₹149 Only
                       </h2>
-                      <h2
-                        style={{
-                          color: "black",
-                          fontWeight: "600",
-                          fontFamily: "'Poppins', sans-serif",
-                        }}
-                      ></h2>
 
                       <ul
                         style={{
@@ -153,6 +146,7 @@ const Bike = () => {
                           <li key={idx}>{feature}</li>
                         ))}
                       </ul>
+
                       <div className="d-flex justify-content-center mt-3">
                         <button
                           className="btn"
@@ -180,7 +174,6 @@ const Bike = () => {
             </div>
           </div>
         </div>
-        
       </div>
     </>
   );
