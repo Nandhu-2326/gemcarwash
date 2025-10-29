@@ -26,27 +26,30 @@ const Car = () => {
     {
       id: 1,
       title: "4 Seat Car Wash Price",
-      price: "₹349 Only",
+      price: "₹399 Only",
       seats: "4 seat",
       img: "redcar.png",
+      wax: "Lioum Premium Wax Polish Extra ₹50",
       features: ["Foam Wash", "Interior Vacuum", "Tire Polish"],
       width: "350",
     },
     {
       id: 2,
-      title: "6 Seat Car Wash Price",
-      price: "₹399 Only",
+      title: "SUV Seat Car Wash Price",
+      price: "₹449 Only",
       seats: "6 seat",
       img: "whitecar.png",
+      wax: "Lioum Premium Wax Polish Extra ₹50",
       features: ["Foam Wash", "Interior Vacuum", "Tire Polish"],
       width: "350",
     },
     {
       id: 3,
       title: "8 Seat Car Wash Price",
-      price: "₹449 Only",
+      price: "₹499 Only",
       seats: "8 seat",
       img: "toyocar.png",
+      wax: "Lioum Premium Wax Polish Extra ₹50",
       features: ["Foam Wash", "Interior Vacuum", "Tire Polish"],
       width: "300",
     },
@@ -153,6 +156,16 @@ const Car = () => {
                         >
                           Car Service {car.price}
                         </h2>
+                        <h5
+                          style={{
+                            color: "black",
+                            fontWeight: "600",
+                            fontFamily: "'Poppins', sans-serif",
+                          }}
+                          className="text-white py-2"
+                        >
+                          {car.wax}
+                        </h5>
 
                         <ul
                           style={{
