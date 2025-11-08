@@ -136,34 +136,34 @@ Address: ${form.address}`;
               alt=""
               className="img-fluid"
             />
-            <ul className="list-unstyled d-flex jusitfy-content-between nav-list align-items-center gap-5 fw-bold ">
+            <ul className="list-unstyled d-flex justify-content-between nav-list align-items-center gap-5 fw-bold desktop-nav">
               <ul className="d-flex list-unstyled gap-4">
                 <li>
-                  <a href="#home" className=" text-decoration-none text-dark">
+                  <a href="#home" className="text-decoration-none text-dark">
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="#car" className=" text-decoration-none text-dark">
+                  <a href="#car" className="text-decoration-none text-dark">
                     Car Wash
                   </a>
                 </li>
                 <li>
                   <a
                     href="#services"
-                    className=" text-decoration-none text-dark"
+                    className="text-decoration-none text-dark"
                   >
                     Services
                   </a>
                 </li>
-
                 <li>
-                  <a href="#about" className=" text-decoration-none text-dark">
+                  <a href="#about" className="text-decoration-none text-dark">
                     About
                   </a>
                 </li>
               </ul>
             </ul>
+
             <button className="contact-btn rounded ">
               <a href="#contact" className="text-decoration-none text-white">
                 Contact
@@ -549,46 +549,49 @@ Address: ${form.address}`;
             style={{ width: "100%", height: "2px" }}
             className="text-white bg-white"
           ></div>
-          <div className="row mt-4">
+          <div className="row mt-4 py-3">
             <div className="col-12 col-sm-6 col-md-4">
               <h1 className="text-white">Gem Car Wash</h1>
               <span className="text-white fs-5">
                 Premium car wash solutions – trusted for shine & care.
               </span>{" "}
               <br />
-              <span className="text-white fs-5">
-                Excellence in every wash, trust in every shine.
-              </span>
             </div>
-            <div className="col-12 col-sm-6 col-md-4 d-flex flex-column align-items-center ">
+            <div className="col-12 col-sm-6 col-md-4 d-flex flex-column align-items-start mt-3 mt-md-0 ">
               <h1 className="text-white text-center">Quick Link</h1>
               <ul className="list-unstyled" style={{ gap: "10px" }}>
                 <li>
-                  <a href="" className="text-white text-decoration-none">
+                  <a href="#home" className="text-white text-decoration-none">
                     {" "}
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="" className="text-white text-decoration-none">
+                  <a
+                    href="#services"
+                    className="text-white text-decoration-none"
+                  >
                     Service
                   </a>
                 </li>
                 <li>
-                  <a href="" className="text-white text-decoration-none">
+                  <a href="#about" className="text-white text-decoration-none">
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="" className="text-white text-decoration-none">
+                  <a
+                    href="#contact"
+                    className="text-white text-decoration-none"
+                  >
                     Contact
                   </a>
                 </li>
               </ul>
             </div>
-            <div className="col-12 col-sm-6 col-md-4 text-white d-flex flex-column align-items-center">
+            <div className="col-12 col-sm-6 col-md-4 text-white d-flex flex-column align-items-start mt-3 mt-md-0">
               <h1 className="">Follow Us</h1>
-              <div className="contact-info d-flex flex-column align-items-center">
+              <div className="contact-info d-flex flex-column">
                 <div className="contact-item d-flex align-items-center mb-2">
                   <img
                     src="whatsapp.png"
@@ -619,6 +622,7 @@ Address: ${form.address}`;
                     className="contact-icon me-2"
                   />
                   <span>mpoobalan15@gmail.com</span>
+                  
                 </div>
               </div>
             </div>

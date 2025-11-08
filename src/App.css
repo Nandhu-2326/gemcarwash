@@ -12,6 +12,31 @@
 .loading-title{
   font-family: 'Poppins', sans-serif;
   }
+  .desktop-nav li {
+    position: relative;
+    padding-bottom: 4px; /* Space for the line */
+    transition: color 0.3s ease;
+  }
+  
+  .desktop-nav li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 4px;
+    background-color: rgb(22, 76, 148);
+    transition: width 0.7s ease;
+  }
+  
+  .desktop-nav li:hover::after {
+    width: 100%;
+  }
+  
+  .desktop-nav li a:hover {
+    color: rgb(22, 76, 148);
+  }
+  
   .contact-btn{
     padding: 10px 20px;
     border: none;
